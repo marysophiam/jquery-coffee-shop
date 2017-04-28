@@ -46,11 +46,11 @@
 <script>
     // "use strict";
 
-    // // var myImage = document.getElementById("coffee_image");
+    // var myImage = document.getElementById("coffee_image");
 
     // var myRevenueMessage = document.getElementById("revenue");
 
-    // // myImage.setAttribute("src", "static/coffee_beans.jpg");
+    // myImage.setAttribute("src", "static/coffee_beans.jpg");
 
     // myImage.addEventListener("click", makeCoffee);
 
@@ -58,7 +58,7 @@
     //      myImage.src = "static/coffee_machine.jpg";
     //      setTimeout(function() { myImage.setAttribute("src", "static/coffee_mug.jpg"); }, 1500);
     //      setTimeout(function() { myImage.setAttribute("src", "static/coffee_beans.jpg"); }, 4000);
-    }
+    // }
 
 </script>
 
@@ -66,20 +66,26 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <script>
 
-    $("img#coffee_image").attr("src", "static/coffee_machine.jpg"); 
+    function startCoffee() {
+            $("img#coffee_image").attr("src", "static/coffee_machine.jpg");
+    }
 
-    $("img#coffee_image").on("click", function() {
-        $("img#coffee_image").fadeOut();
-        $("img#coffee_image").attr("src", "static/coffee_mug.jpg").fadeIn();
-        $("img#coffee_image").fadeOut();
-        $("img#coffee_image").attr("src", "static/coffee_beans.jpg").fadeIn();
-    });
+    function makeCoffee() {
+        $("img#coffee_image");
+
+            setTimeout(startCoffee, 1000);
+
+    //     $("img#coffee_image").fadeOut();
+    //     $("img#coffee_image").attr("src", "static/coffee_mug.jpg").fadeIn();
+    //     $("img#coffee_image").fadeOut();
+    //     $("img#coffee_image").attr("src", "static/coffee_beans.jpg").fadeIn();
+    }
+
+    $("img#coffee_image").attr("src", "static/coffee_beans.jpg"); 
 
 
 
     $('#coffee_image').on('click', makeCoffee);
-
-
 
 </script>
 
